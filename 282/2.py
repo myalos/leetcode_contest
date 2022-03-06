@@ -3,6 +3,7 @@ class Solution:
         from collections import Counter
         _s = Counter(s)
         _t = Counter(t)
+        # 两个Counter 求并
         union = _s | _t
         total, _s_count, _t_count = 0, 0, 0
         for item in union.items():

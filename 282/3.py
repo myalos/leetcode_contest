@@ -4,6 +4,7 @@ from typing import *
 class Solution:
     def minimumTime(self, time: List[int], totalTrips: int) -> int:
         def count(moment):
+            # 在moment时刻，所有的公交车完成的趟数的总和
             res = 0
             for _t in time:
                 res += moment // _t
@@ -11,7 +12,6 @@ class Solution:
         
         # 即使把sum(time) 换成非常大的数 还是不行
         # 后来发现可能数字还是不够大，我改成了 min(time) * totalTrips 就搞定了
-        # 我觉得这个题目需要看一下题解，因为我这个算法有点girigiri
         low, high = 1, min(time) * totalTrips
         while low < high:
             mid = (low + high) // 2
