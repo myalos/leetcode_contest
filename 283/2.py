@@ -74,11 +74,11 @@ class Solution3:
         for i in range(len(nums)):
             if k == 0:
                 break
-            if nums[i] <= prev + 1: # 考虑到相同元素的存在 19 19， 19 20都不能
+            if nums[i] <= prev + 1: # 考虑到相同元素的存在 19 19， 19 20都算没有空隙的
                 prev = nums[i] 
                 continue
             item = min(k, nums[i] - prev - 1) # 从prev + 1到nums[i] - 1总共有nums[i] - prev - 2 + 1个数
-            ans += (prev + nums[i]) * item // 2
+            ans += (prev + 1 + prev + item) * item // 2
             # 首项是prev + 1 末项是 nums[i] - 1
             k -= item
             prev = nums[i]
