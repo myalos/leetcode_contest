@@ -1,3 +1,10 @@
+# 题目
+# 链表头节点head，由0分隔开的一连串整数，链表的开端和末尾的节点都满足Node.val == 0
+# 对于每两个相邻的0，将他们的所有节点合并成一个节点，其值是所有已合并节点的值之和。然后将所有的0移除，修改后的链表不应该含有任何的0
+# 返回修改后链表的头节点
+#
+# 输入 head = [0, 3, 1, 0, 4, 5, 2, 0]
+# 输出 [4, 11]
 from typing import *
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -52,7 +59,7 @@ def transformList(_list):
         p = p.next
     p.next = ListNode(0, None)
     return _head
-    
+
 def main():
     sol = Solution1()
     _input = transformList([0,3,1,0,4,5,2,0])

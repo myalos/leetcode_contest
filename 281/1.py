@@ -1,3 +1,10 @@
+# 题目
+# 给你一个正整数num，请你统计并返回小于或等于num且各位数字之和为偶数的正整数的数目
+# 正整数的各位数字之和是其所有位上的对应数字相加的结果
+#
+# 输入 num = 4
+# 输入 2
+# 2 和 4
 # attemp 1 WA, input 4 output 0 expect 2
 class Solution:
     def countEven(self, num: int) -> int:
